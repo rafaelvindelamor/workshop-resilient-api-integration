@@ -27,6 +27,11 @@ jobs:
         with:
           arguments: build
 
+      - name: Install
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: install
+
       - name: Deploy
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
