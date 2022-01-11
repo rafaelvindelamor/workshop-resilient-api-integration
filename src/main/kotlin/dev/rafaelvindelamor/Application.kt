@@ -8,7 +8,9 @@ import io.ktor.server.netty.*
 
 fun main() {
 
-    val port = Option.fromNullable(System.getenv("PORT")).map { value -> Integer.parseInt(value) }.getOrElse { 8080 }
+    val port = Option.fromNullable(System.getenv("PORT"))
+        .map { value -> Integer.parseInt(value) }
+        .getOrElse { 8080 }
 
     embeddedServer(Netty, port = port, host = "0.0.0.0") {
         configureRouting()
